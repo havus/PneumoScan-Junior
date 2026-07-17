@@ -10,8 +10,6 @@ PneumoScan Junior
 
 Description:
 Metadata for all built-in sample images.
-
-This file stores ONLY sample image information.
 =============================================================
 """
 
@@ -34,7 +32,7 @@ SAMPLES = {
 
     "🟢 Normal Case A": {
 
-        "path": NORMAL_SAMPLE_DIR / "normal_A.JPEG",
+        "path": NORMAL_SAMPLE_DIR / "normal_A.jpeg",
 
         "class": "Normal",
 
@@ -51,7 +49,7 @@ SAMPLES = {
 
     "🟢 Normal Case B": {
 
-        "path": NORMAL_SAMPLE_DIR / "normal_B.JPEG",
+        "path": NORMAL_SAMPLE_DIR / "normal_B.jpeg",
 
         "class": "Normal",
 
@@ -67,7 +65,7 @@ SAMPLES = {
 
     "🟢 Normal Case C": {
 
-        "path": NORMAL_SAMPLE_DIR / "normal_C.JPEG",
+        "path": NORMAL_SAMPLE_DIR / "normal_C.jpeg",
 
         "class": "Normal",
 
@@ -87,7 +85,7 @@ SAMPLES = {
 
     "🔴 Pneumonia Case A": {
 
-        "path": PNEUMONIA_SAMPLE_DIR / "pneumonia_A.JPEG",
+        "path": PNEUMONIA_SAMPLE_DIR / "pneumonia_A.jpeg",
 
         "class": "Pneumonia",
 
@@ -103,7 +101,7 @@ SAMPLES = {
 
     "🔴 Pneumonia Case B": {
 
-        "path": PNEUMONIA_SAMPLE_DIR / "pneumonia_B.JPEG",
+        "path": PNEUMONIA_SAMPLE_DIR / "pneumonia_B.jpeg",
 
         "class": "Pneumonia",
 
@@ -119,7 +117,7 @@ SAMPLES = {
 
     "🔴 Pneumonia Case C": {
 
-        "path": PNEUMONIA_SAMPLE_DIR / "pneumonia_C.JPEG",
+        "path": PNEUMONIA_SAMPLE_DIR / "pneumonia_C.jpeg",
 
         "class": "Pneumonia",
 
@@ -135,6 +133,7 @@ SAMPLES = {
 
 }
 
+
 # ==========================================================
 # HELPER FUNCTIONS
 # ==========================================================
@@ -149,14 +148,6 @@ def get_sample_names():
 def get_sample(sample_name):
     """
     Return metadata for a selected sample.
-
-    Parameters
-    ----------
-    sample_name : str
-
-    Returns
-    -------
-    dict
     """
     return SAMPLES[sample_name]
 

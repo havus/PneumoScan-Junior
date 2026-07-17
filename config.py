@@ -211,3 +211,23 @@ FOOTER = (
     "Research Prototype | "
     f"Developed by {DEVELOPER}"
 )
+# ==========================================================
+# MODEL CONFIGURATION
+# ==========================================================
+
+from pathlib import Path
+
+# Root directory
+BASE_DIR = Path(__file__).resolve().parent
+
+# Model folder
+MODEL_DIR = BASE_DIR / "models"
+
+# Model filename
+MODEL_NAME = "Xception_final_gradcam.keras"
+
+# Full model path
+MODEL_PATH = MODEL_DIR / MODEL_NAME
+
+# Google Drive File ID
+MODEL_DRIVE_ID = "1wIOUrOG9MiY9Q2Et_Tq_E3z0IxYf3elT"
