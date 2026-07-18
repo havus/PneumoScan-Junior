@@ -1,0 +1,20 @@
+services:
+  pneumoscan:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: pneumoscan-junior:latest
+    container_name: pneumoscan-junior
+    ports:
+      # Left side: host port (make/PORT). Right side: the port
+      # Streamlit listens on *inside* the container — must match
+      # whatever APP_PORT was baked in via --build-arg at build time.
+      # Both come from the same APP_PORT env var (exported by the
+      # Makefile) so they can never drift out of sync.
+      - "${PORT:-8501}:${APP_PORT:-8501}"
+    # No healthcheck override here — the image's own HEALTHCHECK
+    # (set in the Dockerfile) already reads $APP_PORT correctly at
+    # runtime. Duplicating it here as a hardcoded port is exactly
+    # what caused this mapping to drift in the first place.
+    restart: unless-stopped

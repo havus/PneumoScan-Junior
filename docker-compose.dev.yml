@@ -1,0 +1,32 @@
+# ==========================================================
+# Development override for docker-compose.yml
+#
+# Use together with the base file so it inherits the port
+# mapping, healthcheck, etc. and only changes what dev needs:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+#
+# (the Makefile `make dev` target wraps this).
+#
+# What this override does:
+#   - builds the Dockerfile's "dev" stage (no source/model baked in)
+#   - bind-mounts the working directory into /app, so edits on the
+#     host are seen by the container immediately; Streamlit's
+#     runOnSave (set in the dev stage) then reruns the app
+#   - uses a separate image tag / container name so it never clashes
+#     with a running production container
+# ==========================================================
+
+services:
+  pneumoscan:
+    build:
+      target: dev
+    image: pneumoscan-junior:dev
+    container_name: pneumoscan-junior-dev
+    volumes:
+      # Live source (and the local model file, if present) mounted in.
+      # /opt/venv lives outside /app, so the installed deps are not
+      # shadowed by this mount.
+      - .:/app
+    # Don't auto-restart during development.
+    restart: "no"
