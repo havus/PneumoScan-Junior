@@ -31,8 +31,13 @@ venv/
 # ==========================================================
 # TensorFlow Model
 # ==========================================================
+#
+# The trained model (Xception_final_gradcam.keras) IS baked into
+# the image via COPY, so it is intentionally NOT ignored here.
+# Only the temporary partial-download file is excluded.
 
 models/
+*.download
 
 # ==========================================================
 # OS
