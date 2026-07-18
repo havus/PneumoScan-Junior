@@ -44,20 +44,20 @@ Beyond image classification, the application incorporates **Gradient-weighted Cl
 **Home**
 
 <p align="center">
-  <img src="assets/v3_home.PNG" width="40%">
+  <img src="assets/v3_home.PNG" width="60%">
 </p>
 
 
 **Select a sample or upload a chest X-ray image and click 'run prediction' to see the inference result**
 
 <p align="center">
-  <img src="assets/v3_PneumoScanJ_prediction_demo_pneumonia_case.PNG" width="40%">
+  <img src="assets/v3_PneumoScanJ_prediction_demo_pneumonia_case.PNG" width="60%">
 </p>
 
 **Grad-CAM explanation**
 
 <p align="center">
-  <img src="assets/v3_PneumoScanJ_gradcam_demo_pneumonia_case.PNG" width="40%">
+  <img src="assets/v3_PneumoScanJ_gradcam_demo_pneumonia_case.PNG" width="60%">
 </p>
 
 
